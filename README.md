@@ -1,34 +1,108 @@
-Chess is an abstract strategy game and involves no hidden information. It is played on a square chessboard with 64 squares arranged in an eight-by-eight grid. At the start, each player (one controlling the white pieces, the other controlling the black pieces) controls sixteen pieces: one king, one queen, two rooks, two bishops, two knights, and eight pawns. The object of the game is to checkmate the opponent's king, whereby the king is under immediate attack (in "check") and there is no way for it to escape. There are also several ways a game can end in a draw.
+# Chess — Terminal Edition
 
-![chess_set](https://upload.wikimedia.org/wikipedia/commons/6/6f/ChessSet.jpg) 
+> A fully-featured, two-player chess game playable right in your terminal — no GUI required.
 
-If you are new and want to get familier to the rules of the game kindly refer the given wikipedia link:
- https://en.wikipedia.org/wiki/Rules_of_chess
- 
-Cookies and their respective names are given below: 
-![cookie_info](https://images.creativemarket.com/0.1.0/ps/299465/910/607/m1/fpnw/wm0/1410.m00.i103.n006.s.c12.chess-set-with-chess-names-.jpg?1421047171&s=8340fbc93b8aa0a5079d061bb5485519) 
+![chess_set](https://upload.wikimedia.org/wikipedia/commons/6/6f/ChessSet.jpg)
 
-The game runs under several rules which are stated below and can also be read at the start of the game.<br />
-Some Basic instructions :
-1. Every Cookie's name is an alpha-numeric combination of length 3
-2. First letter dentotes weather the cookie is from black army (B) or white army (W)
-3. Second letter denotes kind of character in this war.
-4. Basic cookie names are as follows:<br />
-        R-Rook   (Hathi)<br />
-        K-Knight (Ghoda)<br />
-        B-Bishop (Vazir)<br />
-        Ln-Lion  (King, Raja)<br />
-        Qn-Queen (Rani)<br />
-        P-Pawn   (Sipahi)<br />
-5. Third is a numeric character used to distinguish characters if they are of same type.
+---
 
+## Features
 
-Some Pre-cautions:
-1. Caslene will be performed by selecting rook, Selecting king in that case will be of no benifits.
-2. X and Y axis are shown on the ends of board, so remember not to make mistakes.
-3. Three invalid/illegal moves may lead to your opponents victory so mind your steps.
+- **Complete chess rules** — castling, en-passant-style pawn kills, pawn promotion, and check/checkmate detection
+- **Check warnings** — the game alerts you to threats by direction (diagonal, perpendicular, knight, pawn)
+- **Auto-move assistance** — pawns auto-advance when no decision is needed; kill options surface only when an enemy is in range
+- **Illegal move tracking** — each player gets 3 chances before forfeiting on repeated bad moves
+- **Available in Java and Python** — play with `chess.java` (compile + run) or `chess.py` (Python 3)
 
+---
 
-Input Format:
--> In the Field 'Enter a cokie:' The input must be in the exact same case as in the board.
- for example: WP3 is correct input whereas inputs like wp3 or Wp3 ar any other from mentioned may result to invalid input.
+## How to Play
+
+### Python
+```bash
+python3 chess.py
+```
+
+### Java
+```bash
+javac chess.java
+java chess
+```
+
+> **Note:** Must be run in an interactive terminal (not piped/redirected). Python version will warn you if it detects a non-interactive shell.
+
+---
+
+## Piece Naming (Cookies)
+
+Every piece on the board is a 3-character code:
+
+| Code | Piece | Hindi Name |
+|------|-------|------------|
+| `WR1` / `BR2` | Rook | Hathi |
+| `WK1` / `BK2` | Knight | Ghoda |
+| `WB1` / `BB2` | Bishop | Vazir |
+| `WLn` / `BLn` | King | Raja |
+| `WQn` / `BQn` | Queen | Rani |
+| `WP1`–`WP8` | Pawn | Sipahi |
+
+- First letter: **W** (White) or **B** (Black)
+- Second letter: piece type
+- Third: number to distinguish identical pieces (`n` for unique pieces like King/Queen)
+
+![cookie_info](https://images.creativemarket.com/0.1.0/ps/299465/910/607/m1/fpnw/wm0/1410.m00.i103.n006.s.c12.chess-set-with-chess-names-.jpg?1421047171&s=8340fbc93b8aa0a5079d061bb5485519)
+
+---
+
+## Input Format
+
+At the `Enter a cookie :` prompt, type the exact piece code as shown on the board — case-sensitive.
+
+```
+Enter a cookie : WP3     ✓ correct
+Enter a cookie : wp3     ✗ invalid
+Enter a cookie : Wp3     ✗ invalid
+```
+
+Then enter the target row and column when prompted.
+
+---
+
+## Special Moves
+
+| Move | How to trigger |
+|------|----------------|
+| **Castling** | Select your Rook, then enter your King's position as the destination |
+| **Pawn promotion** | Move a pawn to the last rank — choose your replacement piece from the menu |
+| **Pawn kill** | Kill options appear automatically when an enemy is diagonally adjacent |
+
+---
+
+## Rules & Precautions
+
+1. Castling is initiated by selecting the **Rook**, not the King.
+2. The board displays X (columns) and Y (rows) axes at the edges — double-check coordinates before entering.
+3. **3 illegal/invalid moves = forfeit.** Think before you type.
+4. If your King is under two simultaneous threats, only King moves are allowed.
+
+---
+
+## Learn Chess
+
+New to chess? Check out the official rules:
+[https://en.wikipedia.org/wiki/Rules_of_chess](https://en.wikipedia.org/wiki/Rules_of_chess)
+
+---
+
+## Project Structure
+
+```
+Chess-in-Java/
+├── chess.java   # Original Java implementation
+├── chess.py     # Python rewrite (optimised, bug-fixed)
+└── README.md
+```
+
+---
+
+*Built for fun. Forks welcome.*
