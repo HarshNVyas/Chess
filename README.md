@@ -2,6 +2,8 @@
 
 > A fully-featured, two-player chess game playable right in your terminal — no GUI required.
 
+**▶ Play online (no install needed): [chess-terminal.fly.dev](https://chess-terminal.fly.dev)** — limited to 3 games per day per player.
+
 ![chess_set](https://upload.wikimedia.org/wikipedia/commons/6/6f/ChessSet.jpg)
 
 ---
